@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Lodging · Nov 2026</title>
+<style>
+:root{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A;
+  --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b;
+  --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+  --font-display:Georgia,'Iowan Old Style','Palatino Linotype','Noto Serif KR',serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+    --accent:#E28C4E; --accent-deep:#F0A050;
+    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
+    --nav-bg:rgba(21,24,21,0.86);
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+  --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+  --accent:#E28C4E; --accent-deep:#F0A050; --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+  --good:#3fbf3f; --critical:#e0605f; --nav-bg:rgba(21,24,21,0.86);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A; --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --critical:#d03b3b; --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body);
+  font-size:16px; line-height:1.6;
+  background-image:radial-gradient(circle at 18% 8%, rgba(30,33,31,0.03) 0, transparent 45%),
+                    radial-gradient(circle at 82% 55%, rgba(30,33,31,0.025) 0, transparent 50%);
+}
+::selection{ background:var(--accent); color:#fff; }
+a{ color:var(--accent-deep); }
+a:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+h1,h2,h3{ font-family:var(--font-display); color:var(--ink); text-wrap:balance; margin:0; }
+h1{ font-size:2.15rem; font-weight:700; letter-spacing:-0.01em; }
+h2{ font-size:1.4rem; font-weight:700; margin-bottom:.4rem; }
+h3{ font-size:1.1rem; font-weight:700; }
+p{ margin:0 0 1em; }
+.muted{ color:var(--ink-soft); }
+.eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); }
+.wrap{ max-width:900px; margin:0 auto; padding:0 1.5rem; }
+.topnav{ position:sticky; top:0; z-index:20; background:var(--nav-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
+.brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
+.brand em{ font-style:normal; color:var(--accent-deep); }
+.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
+.navlinks a:hover{ color:var(--ink); }
+.navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
+main{ padding-bottom:5rem; }
+header.page-head{ padding:2.75rem 0 1rem; }
+header.page-head p.lede{ font-size:1.08rem; color:var(--ink-soft); max-width:64ch; margin-top:.6rem; }
+section{ padding:1.25rem 0; }
+section + section{ border-top:1px solid var(--border); }
+.chip{ display:inline-flex; align-items:center; gap:.4rem; font-size:.75rem; font-weight:700; padding:.28rem .6rem; border-radius:99px; background:var(--paper-raised); border:1px solid var(--border-strong); color:var(--ink); white-space:nowrap; }
+.chip .dot{ width:8px; height:8px; border-radius:50%; flex:none; }
+.chip-east .dot{ background:var(--east); } .chip-south .dot{ background:var(--accent); } .chip-west .dot{ background:var(--west); } .chip-city .dot{ background:var(--city); }
+.card{ background:var(--paper-raised); border:1px solid var(--border); border-radius:14px; padding:1.5rem 1.6rem; box-shadow:var(--shadow); }
+.card + .card{ margin-top:1.1rem; }
+.card-head{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:.3rem; }
+.card-head .nights{ font-size:.85rem; color:var(--ink-muted); font-weight:600; }
+.card .tier{ font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; color:var(--accent-deep); font-weight:700; margin:.5rem 0 .2rem; }
+.card .price{ font-family:var(--font-display); font-size:1.3rem; font-weight:700; font-variant-numeric:tabular-nums; margin:.1rem 0 .8rem; }
+.card .price span{ font-family:var(--font-body); font-size:.85rem; color:var(--ink-muted); font-weight:400; }
+.opts{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; }
+.opts li{ padding:.55rem .7rem; background:var(--paper); border:1px solid var(--border); border-radius:8px; font-size:.9rem; }
+.opts li b{ color:var(--ink); }
+.table-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:12px; margin-top:1rem; }
+table{ width:100%; border-collapse:collapse; font-size:.92rem; min-width:520px; }
+th,td{ text-align:left; padding:.65rem .9rem; border-bottom:1px solid var(--border); }
+thead th{ font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); background:var(--paper-raised); }
+tbody tr:last-child td{ border-bottom:none; }
+td.num, th.num{ text-align:right; font-variant-numeric:tabular-nums; }
+tfoot td{ font-weight:700; border-top:2px solid var(--border-strong); border-bottom:none; background:var(--paper-raised); }
+footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink-muted); font-size:.85rem; }
+@media (max-width:640px){ h1{ font-size:1.7rem; } }
+@media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="wrap">
+  <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a class="active" href="accommodation.html">Lodging</a>
+    <a href="budget.html">Budget</a>
+    <a href="gotchas.html">Gotchas</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <header class="page-head">
+    <div class="eyebrow">Where to stay</div>
+    <h1>Four bases, one splurge</h1>
+    <p class="lede">Since lodging is flexible, the plan mixes family pensions (cheap, spacious, usually have a kitchenette) with two nights at a proper resort in the middle of the trip. Named properties below are representative of each tier &mdash; treat them as a shortlist to compare, not a booking recommendation, since rates and availability need confirming closer to the date.</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <div class="card-head">
+        <span class="chip chip-city"><span class="dot"></span>Jeju City</span>
+        <span class="nights">2 nights total &middot; Sat 21 (arrival) + Sat 28 (departure)</span>
+      </div>
+      <div class="tier">Mid-range hotel</div>
+      <div class="price">~S$115<span> / night &middot; S$230 total</span></div>
+      <p>Close to the airport, useful on a late arrival and an early departure day. Plenty of dinner options nearby (Dongmun Market, black pork street) so you're not searching for food after a 6-hour flight.</p>
+      <ul class="opts">
+        <li><b>Ramada Plaza Jeju</b> &mdash; centrally located business hotel, family rooms available.</li>
+        <li><b>L7 Jeju by Lotte</b> &mdash; newer mid-range option near the old town.</li>
+        <li>A family-run guesthouse near Yongduam / the airport, for a cheaper option with similar convenience.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="chip chip-east"><span class="dot"></span>Seongsan &middot; East</span>
+        <span class="nights">2 nights &middot; Sun 22 &ndash; Mon 23</span>
+      </div>
+      <div class="tier">Family pension</div>
+      <div class="price">~S$100<span> / night &middot; S$200 total</span></div>
+      <p>Small, family-run pensions dominate this area &mdash; usually an ondol (heated-floor) room sleeping 4, sometimes with a small kitchenette, a short drive from both Seongsan Ilchulbong and the Udo ferry terminal.</p>
+      <ul class="opts">
+        <li>Family pensions in Seongsan-eup near Gwangchigi Beach &mdash; walkable to the sunrise-peak trailhead.</li>
+        <li>Guesthouses closer to the ferry terminal if you want to walk to the first sailing.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="chip chip-south"><span class="dot"></span>Jungmun &middot; South</span>
+        <span class="nights">2 nights &middot; Tue 24 &ndash; Wed 25</span>
+      </div>
+      <div class="tier">Resort splurge</div>
+      <div class="price">~S$450<span> / night &middot; S$900 total</span></div>
+      <p>This is the one nice stay &mdash; a proper family resort with a heated indoor/outdoor pool, which matters in November. Book this leg first and earliest, since resort family rooms sell out before pensions do.</p>
+      <ul class="opts">
+        <li><b>Kensington Jeju Jungmun</b> &mdash; family rooms, pool, walking distance to Jungmun Beach.</li>
+        <li><b>Grand Josun Jeju</b> or <b>Haevichi Hotel &amp; Resort</b> &mdash; higher tier if the budget stretches (see the buffer on the <a href="budget.html">Budget</a> page).</li>
+        <li>Ramada Plaza Jeju Seogwipo as a slightly more affordable 4-star alternative.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="chip chip-west"><span class="dot"></span>Aewol &middot; West</span>
+        <span class="nights">2 nights &middot; Thu 26 &ndash; Fri 27</span>
+      </div>
+      <div class="tier">Family pension / small hotel</div>
+      <div class="price">~S$110<span> / night &middot; S$220 total</span></div>
+      <p>Aewol and neighbouring Hallim have a good spread of boutique pensions, many within walking distance of the cafe street and the coastal walk &mdash; handy for an easy last full day before heading back to Jeju City.</p>
+      <ul class="opts">
+        <li>Pensions along the Aewol coastline, most with sea-view rooms.</li>
+        <li>Hallim-side options if you'd rather be closer to Hallim Park and Hyeopjae Beach.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Accommodation total</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Leg</th><th>Tier</th><th class="num">Nights</th><th class="num">Per night</th><th class="num">Subtotal</th></tr></thead>
+        <tbody>
+          <tr><td>Jeju City (arr. + dep.)</td><td>Mid-range hotel</td><td class="num">2</td><td class="num">S$115</td><td class="num">S$230</td></tr>
+          <tr><td>Seongsan (East)</td><td>Family pension</td><td class="num">2</td><td class="num">S$100</td><td class="num">S$200</td></tr>
+          <tr><td>Jungmun (South)</td><td>Resort splurge</td><td class="num">2</td><td class="num">S$450</td><td class="num">S$900</td></tr>
+          <tr><td>Aewol (West)</td><td>Family pension</td><td class="num">2</td><td class="num">S$110</td><td class="num">S$220</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="3">Total &middot; 8 nights</td><td></td><td class="num">S$1,550</td></tr></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <footer class="site">
+    <p>All figures are shoulder-season estimates for a family room/ondol room sleeping 4 &mdash; confirm live rates before booking, and book the Jungmun resort leg first since family rooms there move fastest.</p>
+  </footer>
+</main>
+</body>
+</html>

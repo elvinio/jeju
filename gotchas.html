@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Gotchas · Nov 2026</title>
+<style>
+:root{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A;
+  --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b;
+  --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+  --font-display:Georgia,'Iowan Old Style','Palatino Linotype','Noto Serif KR',serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+    --accent:#E28C4E; --accent-deep:#F0A050;
+    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
+    --nav-bg:rgba(21,24,21,0.86);
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+  --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+  --accent:#E28C4E; --accent-deep:#F0A050; --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+  --good:#3fbf3f; --critical:#e0605f; --nav-bg:rgba(21,24,21,0.86);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A; --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --critical:#d03b3b; --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body);
+  font-size:16px; line-height:1.6;
+  background-image:radial-gradient(circle at 18% 8%, rgba(30,33,31,0.03) 0, transparent 45%),
+                    radial-gradient(circle at 82% 55%, rgba(30,33,31,0.025) 0, transparent 50%);
+}
+::selection{ background:var(--accent); color:#fff; }
+a{ color:var(--accent-deep); }
+a:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+h1,h2,h3{ font-family:var(--font-display); color:var(--ink); text-wrap:balance; margin:0; }
+h1{ font-size:2.15rem; font-weight:700; letter-spacing:-0.01em; }
+h2{ font-size:1.3rem; font-weight:700; margin-bottom:.9rem; }
+h3{ font-size:.98rem; font-weight:700; }
+p{ margin:0 0 1em; }
+.muted{ color:var(--ink-soft); }
+.eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); }
+.wrap{ max-width:900px; margin:0 auto; padding:0 1.5rem; }
+.topnav{ position:sticky; top:0; z-index:20; background:var(--nav-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
+.brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
+.brand em{ font-style:normal; color:var(--accent-deep); }
+.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
+.navlinks a:hover{ color:var(--ink); }
+.navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
+main{ padding-bottom:5rem; }
+header.page-head{ padding:2.75rem 0 1rem; }
+header.page-head p.lede{ font-size:1.08rem; color:var(--ink-soft); max-width:64ch; margin-top:.6rem; }
+section{ padding:1.5rem 0; }
+section + section{ border-top:1px solid var(--border); }
+.callout{ display:flex; gap:.9rem; padding:1.1rem 1.25rem; border-radius:12px; border:1px solid var(--border); background:var(--paper-raised); }
+.callout + .callout{ margin-top:.75rem; }
+.callout .tag{ flex:none; align-self:flex-start; font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:.3rem .55rem; border-radius:6px; min-width:74px; text-align:center; }
+.tag-critical .tag{ background:var(--critical); color:#fff; }
+.tag-warning .tag{ background:var(--warning); color:#3a2600; }
+.tag-good .tag{ background:var(--good); color:#06280a; }
+.tag-info .tag{ background:var(--east); color:#fff; }
+.callout h3{ margin-bottom:.3rem; }
+.callout p{ margin-bottom:0; font-size:.92rem; }
+.callout p + p{ margin-top:.5rem; }
+footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink-muted); font-size:.85rem; }
+@media (max-width:640px){
+  h1{ font-size:1.7rem; }
+  .callout{ flex-direction:column; gap:.5rem; }
+  .callout .tag{ align-self:flex-start; }
+}
+@media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="wrap">
+  <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="accommodation.html">Lodging</a>
+    <a href="budget.html">Budget</a>
+    <a class="active" href="gotchas.html">Gotchas</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <header class="page-head">
+    <div class="eyebrow">Read before you book</div>
+    <h1>Gotchas &amp; things to sort out</h1>
+    <p class="lede">Grouped by when they matter &mdash; documents to sort before you fly, driving quirks, weather and packing, money, school-term logistics, and a few practical odds and ends.</p>
+  </header>
+
+  <section>
+    <h2>Entry &amp; documents</h2>
+    <div class="callout tag-critical">
+      <span class="tag">Do first</span>
+      <div><h3>International Driving Permit (IDP) &mdash; get it before you fly</h3>
+      <p>Self-driving in Korea requires a 1949 Geneva Convention IDP alongside your passport and Singapore driving licence &mdash; all three, physical originals, at the rental counter. Digital copies and photos are not accepted.</p>
+      <p>Apply in person at AA Singapore (they're the only authorised issuer) &mdash; it cannot be issued in Korea, couriered internationally, or emailed. Get one for each parent who plans to drive, ~S$25 each; bring a passport photo and your licence.</p></div>
+    </div>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>No visa, no K-ETA</h3>
+      <p>Singapore passport holders are exempt from Korea's K-ETA/visa requirement (extended through end of 2026), and flying direct into Jeju also qualifies for Jeju's own 30-day visa-free entry. Either way, just bring passports &mdash; no advance application needed.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>The direct-entry rule only applies if you fly straight to Jeju</h3>
+      <p>If you ever add a Seoul/Busan leg to this trip, entering the mainland first changes the entry basis (standard 90-day Korea visa-free rules apply instead of Jeju's separate waiver) &mdash; not relevant for this itinerary since it's a direct SIN&ndash;CJU round trip, but worth knowing if plans change.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Driving in Jeju</h2>
+    <div class="callout tag-warning">
+      <span class="tag">Important</span>
+      <div><h3>Google Maps won't give driving directions in Korea</h3>
+      <p>A Korean data-export law blocks Google's turn-by-turn navigation nationwide, Jeju included. Install <strong>Naver Map</strong> (best all-rounder, has an English mode) or <strong>KakaoMap</strong> before you leave, and do a quick test search at home so you're not figuring it out at the rental counter.</p></div>
+    </div>
+    <div class="callout tag-warning">
+      <span class="tag">Reserve ahead</span>
+      <div><h3>Booster seats need requesting in advance</h3>
+      <p>Korean law requires child restraints for under-6s; boosters aren't legally mandatory at 7 and 9 but are still the safer call and rental companies stock limited numbers. Request 2 boosters when you book the car, not on arrival &mdash; expect ~S$1&ndash;3/day each.</p></div>
+    </div>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>No tolls anywhere on Jeju</h3>
+      <p>There are no expressways on the island, so no Hi-pass transponder or toll fees to worry about &mdash; just ordinary coastal and country roads. Speed cameras and school-zone limits (30km/h) are strictly enforced though, and fines apply even to rental cars.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Udo Island doesn't take your rental car</h3>
+      <p>Rental cars can't be ferried over for a day trip &mdash; only if you're staying on Udo overnight. Park at the Seongsan Port lot (cheap, ~S$4/day) and rent an e-bike or cart once you're on the island instead.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Refuel before returning the car</h3>
+      <p>Standard "return full" policy &mdash; refuel near the airport before drop-off to avoid the rental company's inflated top-up rate. Stick to a petrol or hybrid compact SUV rather than an EV; Jeju pushes EV rentals hard, but charging-stop logistics add friction you don't need with two young kids in the car.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Weather &amp; packing</h2>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>November is Jeju's driest, mildest month</h3>
+      <p>Expect 13&ndash;17&deg;C by day, ~12&deg;C overnight, and only ~74mm of rain spread over the month &mdash; genuinely pleasant self-drive weather. Pack layers and a windproof jacket; coastal wind can be sharp even on a mild day.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Short days</h3>
+      <p>Sunrise is around 07:20 and sunset around 17:25 in late November &mdash; the Seongsan sunrise hike means a genuinely early, cool start, and outdoor plans elsewhere should wrap by dusk.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Sea's too cold to swim, pools are heated</h3>
+      <p>Pack swimsuits anyway &mdash; the Jungmun resort's indoor/heated pool is very much in play, even though the ocean itself is off the table this time of year. Hallasan's summit trail can see early snow/ice in November and isn't included in this itinerary as a result &mdash; it's not a good match for a 7- and 9-year-old regardless of conditions.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Money &amp; connectivity</h2>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Cards over cash, but carry some won</h3>
+      <p>Korea is highly card-friendly &mdash; Visa/Mastercard work almost everywhere. Keep some cash for markets, small pensions, and parking. Tipping isn't expected anywhere, including restaurants and drivers.</p></div>
+    </div>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>Convenience stores are everywhere</h3>
+      <p>CU, GS25 and 7-Eleven are on almost every corner &mdash; handy for a cheap breakfast, snacks, or anything you forgot to pack, especially useful travelling with kids.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>School term &amp; timing</h2>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>Nov 21 lines up with the school year ending</h3>
+      <p>MOE's 2026 school year for primary schools ends Friday 20 November &mdash; the day before this trip starts &mdash; so a leave-of-absence application likely isn't needed if your children are in mainstream MOE primary school. Double-check your specific school's calendar for any final-week events, and check separately if either child is in an international school, since those calendars differ.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Practical odds and ends</h2>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>The direct Singapore&ndash;Jeju flight route is fairly new</h3>
+      <p>T'way Air (and Scoot) only started flying this nonstop route from August 2025. It should be well-established by November 2026, but it's worth reconfirming the schedule a bit closer to the date rather than assuming it's as fixed as a long-running route.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Restaurant quirks</h3>
+      <p>Many black pork BBQ places have a minimum order of 2 portions per table, and small local restaurants often close one fixed day a week plus a mid-afternoon break &mdash; check hours before making a special trip.</p></div>
+    </div>
+    <div class="callout tag-info">
+      <span class="tag">Note</span>
+      <div><h3>Pack basic kids' medicine</h3>
+      <p>Pharmacies are common but not on every corner outside town centres. Some coastal and oreum-access roads wind enough to trigger motion sickness &mdash; worth having the usual on hand.</p></div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <p>Back to <a href="index.html">Overview</a> &middot; <a href="budget.html">Budget</a> &middot; <a href="itinerary.html">Itinerary</a></p>
+  </footer>
+</main>
+</body>
+</html>
