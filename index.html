@@ -16,17 +16,6 @@
   --font-display:Georgia,'Iowan Old Style','Palatino Linotype','Noto Serif KR',serif;
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{
-    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
-    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
-    --accent:#E28C4E; --accent-deep:#F0A050;
-    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
-    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
-    --nav-bg:rgba(21,24,21,0.86);
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
-  }
-}
 :root[data-theme="dark"]{
   --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
   --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
@@ -63,7 +52,7 @@ p{ margin:0 0 1em; }
 .topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
 .brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
 .brand em{ font-style:normal; color:var(--accent-deep); }
-.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks{ display:flex; gap:1.2rem; flex-wrap:wrap; }
 .navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
 .navlinks a:hover{ color:var(--ink); }
 .navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
@@ -78,25 +67,26 @@ section + section{ border-top:1px solid var(--border); }
 .stat .v{ font-family:var(--font-display); font-size:1.4rem; font-weight:700; font-variant-numeric:tabular-nums; }
 .stat .v.accent{ color:var(--accent-deep); }
 .stat .v.good{ color:var(--good); }
-.route-strip{ display:flex; align-items:center; flex-wrap:wrap; gap:.5rem; margin:1.25rem 0; }
-.route-node{ display:flex; flex-direction:column; gap:.3rem; padding:.7rem .9rem; background:var(--paper-raised); border:1px solid var(--border); border-radius:10px; min-width:112px; }
+.route-strip{ display:flex; align-items:center; flex-wrap:wrap; gap:.5rem; margin:1rem 0 0; }
+.route-node{ display:flex; flex-direction:column; gap:.3rem; padding:.7rem .9rem; background:var(--paper-raised); border:1px solid var(--border); border-radius:10px; min-width:132px; }
 .route-node .dot{ width:9px; height:9px; border-radius:50%; }
 .route-node .name{ font-weight:700; font-size:.9rem; }
 .route-node .nights{ font-size:.76rem; color:var(--ink-muted); }
 .route-arrow{ color:var(--ink-muted); font-size:1.1rem; padding:0 .1rem; }
+.optcard{ background:var(--paper-raised); border:1px solid var(--border); border-radius:14px; padding:1.4rem 1.5rem; box-shadow:var(--shadow); }
+.optcard + .optcard{ margin-top:1.1rem; }
+.optcard .opthead{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.optcard h3{ font-size:1.15rem; }
+.optcard .tagline{ font-size:.85rem; color:var(--ink-muted); font-weight:600; }
+.optcard p{ margin:.6rem 0 0; font-size:.94rem; }
+.optcard .go{ display:inline-block; margin-top:.9rem; font-weight:700; font-size:.9rem; text-decoration:none; }
 .chip{ display:inline-flex; align-items:center; gap:.4rem; font-size:.75rem; font-weight:700; padding:.28rem .6rem; border-radius:99px; background:var(--paper-raised); border:1px solid var(--border-strong); color:var(--ink); white-space:nowrap; }
 .chip .dot{ width:8px; height:8px; border-radius:50%; flex:none; }
-.chip-east .dot{ background:var(--east); } .chip-south .dot{ background:var(--accent); } .chip-west .dot{ background:var(--west); } .chip-city .dot{ background:var(--city); }
+.chip-east .dot{ background:var(--east); } .chip-north .dot{ background:var(--accent); } .chip-west .dot{ background:var(--west); } .chip-city .dot{ background:var(--city); }
 .card{ background:var(--paper-raised); border:1px solid var(--border); border-radius:14px; padding:1.4rem 1.5rem; box-shadow:var(--shadow); }
 .card + .card{ margin-top:1rem; }
-.table-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:12px; }
-table{ width:100%; border-collapse:collapse; font-size:.92rem; min-width:480px; }
-th,td{ text-align:left; padding:.6rem .9rem; border-bottom:1px solid var(--border); }
-thead th{ font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); background:var(--paper-raised); }
-tbody tr:last-child td{ border-bottom:none; }
-td.num, th.num{ text-align:right; font-variant-numeric:tabular-nums; }
 ul.plain{ list-style:none; margin:0; padding:0; display:grid; gap:.5rem; }
-ul.plain li{ display:grid; grid-template-columns:88px 1fr; gap:.9rem; font-size:.94rem; }
+ul.plain li{ display:grid; grid-template-columns:118px 1fr; gap:.9rem; font-size:.94rem; }
 ul.plain li b{ color:var(--ink-muted); font-weight:700; font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; padding-top:.15rem; }
 .callout{ display:flex; gap:.9rem; padding:1.1rem 1.25rem; border-radius:12px; border:1px solid var(--border); background:var(--paper-raised); }
 .callout + .callout{ margin-top:.85rem; }
@@ -109,7 +99,7 @@ ul.plain li b{ color:var(--ink-muted); font-weight:700; font-size:.82rem; text-t
 footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink-muted); font-size:.85rem; }
 @media (max-width:640px){
   h1{ font-size:1.7rem; }
-  ul.plain li{ grid-template-columns:72px 1fr; }
+  ul.plain li{ grid-template-columns:96px 1fr; }
 }
 @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
 </style>
@@ -119,7 +109,8 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
   <div class="navlinks">
     <a class="active" href="index.html">Overview</a>
-    <a href="itinerary.html">Itinerary</a>
+    <a href="itinerary-east.html">North &amp; East</a>
+    <a href="itinerary-west.html">North &amp; West</a>
     <a href="accommodation.html">Lodging</a>
     <a href="budget.html">Budget</a>
     <a href="gotchas.html">Gotchas</a>
@@ -128,9 +119,9 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
 
 <main class="wrap">
   <header class="page-head">
-    <div class="eyebrow">Family trip plan</div>
-    <h1>Jeju Island, self-drive</h1>
-    <p class="lede">A clockwise loop around the island for 2 adults and 2 children (7 &amp; 9), built around a direct Singapore&ndash;Jeju flight, one rental car for the whole stay, and a mix of family pensions with one resort splurge.</p>
+    <div class="eyebrow">Family trip plan · two ways</div>
+    <h1>Jeju, slow and green</h1>
+    <p class="lede">Two unhurried, nature-first itineraries for 2 adults and 2 children (7 &amp; 9), built around a direct Singapore&ndash;Jeju flight and one rental car. Each version stays in just <strong>two places</strong> &mdash; both a hotel or resort &mdash; so there's a single move mid-trip and nothing else to pack and unpack. We skip the busy south entirely and trade the clockwise dash for long mornings, forests, beaches and grassy volcanic craters.</p>
   </header>
 
   <section>
@@ -138,42 +129,55 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
       <div class="stat"><div class="k">Dates</div><div class="v">21&ndash;29 Nov</div></div>
       <div class="stat"><div class="k">Length</div><div class="v">8 nights</div></div>
       <div class="stat"><div class="k">Party</div><div class="v">2 + 2</div></div>
-      <div class="stat"><div class="k">Budget cap</div><div class="v">S$9,000</div></div>
-      <div class="stat"><div class="k">Estimated total</div><div class="v good">~S$6,360</div></div>
+      <div class="stat"><div class="k">Bases</div><div class="v">2 &middot; 1 move</div></div>
+      <div class="stat"><div class="k">Est. total</div><div class="v good">~S$6,885</div></div>
     </div>
-    <p class="muted">The plan below lands about <strong>29% under cap</strong> &mdash; see <a href="budget.html">Budget</a> for the full breakdown and what the leftover S$2,640 buffer is for.</p>
+    <p class="muted">Both routes cost about the same and land roughly <strong>23% under</strong> the S$9,000 cap &mdash; see <a href="budget.html">Budget</a> for the resort-stay breakdown.</p>
   </section>
 
   <section>
-    <h2>The loop</h2>
-    <p>One rental car, picked up and dropped off at Jeju International Airport, does the whole trip. We go clockwise so there's no backtracking: North &rarr; East &rarr; South &rarr; West &rarr; North. No single drive is longer than about 90 minutes.</p>
-    <div class="route-strip">
-      <div class="route-node"><span class="dot" style="background:var(--city)"></span><span class="name">Jeju City</span><span class="nights">1 night &middot; arrival</span></div>
-      <span class="route-arrow">&rarr;</span>
-      <div class="route-node"><span class="dot" style="background:var(--east)"></span><span class="name">Seongsan (East)</span><span class="nights">2 nights</span></div>
-      <span class="route-arrow">&rarr;</span>
-      <div class="route-node"><span class="dot" style="background:var(--accent)"></span><span class="name">Jungmun (South)</span><span class="nights">2 nights &middot; splurge</span></div>
-      <span class="route-arrow">&rarr;</span>
-      <div class="route-node"><span class="dot" style="background:var(--west)"></span><span class="name">Aewol (West)</span><span class="nights">2 nights</span></div>
-      <span class="route-arrow">&rarr;</span>
-      <div class="route-node"><span class="dot" style="background:var(--city)"></span><span class="name">Jeju City</span><span class="nights">1 night &middot; departure</span></div>
+    <h2>Pick a half of the island</h2>
+    <p>Both routes open with the same four unhurried nights in the north, near the airport, then commit to one coast for the second half. Choose the eastern half for sunrise peaks and island-hopping, or the western half for tea fields, long turquoise beaches and sunset oreums. You only need one.</p>
+
+    <div class="optcard">
+      <div class="opthead">
+        <h3>Option A &middot; North &amp; East</h3>
+        <span class="tagline">Sunrise peak · Udo · lava tubes</span>
+      </div>
+      <div class="route-strip">
+        <div class="route-node"><span class="dot" style="background:var(--accent)"></span><span class="name">North base</span><span class="nights">4 nights &middot; Jeju City</span></div>
+        <span class="route-arrow">&rarr;</span>
+        <div class="route-node"><span class="dot" style="background:var(--east)"></span><span class="name">East base</span><span class="nights">4 nights &middot; Seongsan</span></div>
+      </div>
+      <p>Forests and a silver-grass crater in the north, then the island's most famous sunrise, a slow ferry day on car-free Udo Island, and the Seopjikoji coast.</p>
+      <a class="go" href="itinerary-east.html">See the North &amp; East days &rarr;</a>
+    </div>
+
+    <div class="optcard">
+      <div class="opthead">
+        <h3>Option B &middot; North &amp; West</h3>
+        <span class="tagline">Tea fields · long beaches · sunset oreum</span>
+      </div>
+      <div class="route-strip">
+        <div class="route-node"><span class="dot" style="background:var(--accent)"></span><span class="name">North base</span><span class="nights">4 nights &middot; Jeju City</span></div>
+        <span class="route-arrow">&rarr;</span>
+        <div class="route-node"><span class="dot" style="background:var(--west)"></span><span class="name">West base</span><span class="nights">4 nights &middot; Aewol / Hallim</span></div>
+      </div>
+      <p>The same gentle north, then the west's turquoise Hyeopjae beach, O'sulloc tea fields, camellias in full bloom, and one of Jeju's best sunset oreums.</p>
+      <a class="go" href="itinerary-west.html">See the North &amp; West days &rarr;</a>
     </div>
   </section>
 
   <section>
-    <h2>At a glance</h2>
-    <ul class="plain">
-      <li><b>Sat 21</b> Fly SIN&rarr;CJU direct, collect rental car, settle into Jeju City.</li>
-      <li><b>Sun 22</b> Manjanggul lava tube cave, Seopjikoji coast, Aqua Planet aquarium &rarr; base: Seongsan.</li>
-      <li><b>Mon 23</b> Sunrise hike up Seongsan Ilchulbong, ferry day trip to Udo Island.</li>
-      <li><b>Tue 24</b> Drive south via Seongeup Folk Village &rarr; check into Jungmun resort.</li>
-      <li><b>Wed 25</b> Cheonjiyeon Waterfall, Jusangjeolli Cliff, Teddy Bear Museum, resort pool.</li>
-      <li><b>Thu 26</b> O'sulloc tea fields &amp; Camellia Hill, drive west &rarr; base: Aewol.</li>
-      <li><b>Fri 27</b> Hallim Park, mandarin picking, Handam coastal walk, sunset at Saebyeol Oreum.</li>
-      <li><b>Sat 28</b> Relaxed beach morning, drive back, Dongmun Market &rarr; last night in Jeju City.</li>
-      <li><b>Sun 29</b> Return car, fly CJU&rarr;SIN direct.</li>
-    </ul>
-    <p style="margin-top:1rem"><a href="itinerary.html">Full day-by-day itinerary &rarr;</a></p>
+    <h2>Why slower works here</h2>
+    <div class="card">
+      <ul class="plain">
+        <li><b>Two bases</b> A single mid-trip move means one check-in, one check-out, and no living out of a suitcase. Kids settle; you actually use the pool.</li>
+        <li><b>Short hops</b> Nothing on either plan is more than about an hour's drive, and most days are 20&ndash;40 minutes at most. Late starts are the default.</li>
+        <li><b>Nature over tickets</b> Forests, beaches, craters and oreums &mdash; many free or a few dollars &mdash; carry the trip, with a couple of paid highlights per base rather than a packed checklist.</li>
+        <li><b>Built-in rest</b> Every base has at least one day with nothing scheduled but the resort, a beach and an early dinner.</li>
+      </ul>
+    </div>
   </section>
 
   <section>

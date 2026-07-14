@@ -17,18 +17,6 @@
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
   --seq-1:#F6D6B8; --seq-2:#EFBE8E; --seq-3:#E8A567; --seq-4:#E1690F; --seq-5:#C05812; --seq-6:#8A3E0C;
 }
-@media (prefers-color-scheme:dark){
-  :root{
-    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
-    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
-    --accent:#E28C4E; --accent-deep:#F0A050;
-    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
-    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
-    --nav-bg:rgba(21,24,21,0.86);
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
-    --seq-1:#4A2E17; --seq-2:#6B3E15; --seq-3:#93501A; --seq-4:#C06423; --seq-5:#E0812F; --seq-6:#F0A050;
-  }
-}
 :root[data-theme="dark"]{
   --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
   --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
@@ -67,7 +55,7 @@ p{ margin:0 0 1em; }
 .topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
 .brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
 .brand em{ font-style:normal; color:var(--accent-deep); }
-.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks{ display:flex; gap:1.2rem; flex-wrap:wrap; }
 .navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
 .navlinks a:hover{ color:var(--ink); }
 .navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
@@ -116,7 +104,8 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
   <div class="navlinks">
     <a href="index.html">Overview</a>
-    <a href="itinerary.html">Itinerary</a>
+    <a href="itinerary-east.html">North &amp; East</a>
+    <a href="itinerary-west.html">North &amp; West</a>
     <a href="accommodation.html">Lodging</a>
     <a class="active" href="budget.html">Budget</a>
     <a href="gotchas.html">Gotchas</a>
@@ -126,34 +115,45 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
 <main class="wrap">
   <header class="page-head">
     <div class="eyebrow">The numbers</div>
-    <h1>S$6,360 estimated, S$9,000 cap</h1>
-    <p class="lede">Currency conversions use 1 SGD &asymp; 1,160 KRW (Jul 2026). Flights and hotel rates are the two biggest unknowns until you actually book &mdash; everything else here is fairly stable.</p>
+    <h1>S$6,885 estimated, S$9,000 cap</h1>
+    <p class="lede">These figures fit either route &mdash; the North &amp; East and North &amp; West plans cost within about S$150 of each other. Going all-resort lifts the lodging line, but the slower two-base pace trims driving and paid attractions, so the total still lands comfortably under cap. Currency conversions use 1 SGD &asymp; 1,160 KRW (Jul 2026); flights and resort rates remain the two biggest unknowns until you book.</p>
   </header>
 
   <section>
     <div class="stat-row">
       <div class="stat"><div class="k">Budget cap</div><div class="v">S$9,000</div></div>
-      <div class="stat"><div class="k">Estimated total</div><div class="v">S$6,363</div></div>
-      <div class="stat"><div class="k">Buffer</div><div class="v good">S$2,637</div></div>
-      <div class="stat"><div class="k">Per person / day</div><div class="v">~S$177</div></div>
+      <div class="stat"><div class="k">Estimated total</div><div class="v">S$6,885</div></div>
+      <div class="stat"><div class="k">Buffer</div><div class="v good">S$2,115</div></div>
+      <div class="stat"><div class="k">Per person / day</div><div class="v">~S$191</div></div>
     </div>
   </section>
 
   <section>
     <h2>Where it goes</h2>
     <div class="barchart">
-      <div class="bar-row"><div class="label">Accommodation</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--seq-6)"></div></div><div class="value">S$1,550</div></div>
-      <div class="bar-row"><div class="label">Flights</div><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--seq-5)"></div></div><div class="value">S$1,400</div></div>
-      <div class="bar-row"><div class="label">Food &amp; dining</div><div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--seq-4)"></div></div><div class="value">S$1,170</div></div>
-      <div class="bar-row"><div class="label">Insurance, SIM &amp; extras</div><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--seq-3)"></div></div><div class="value">S$770</div></div>
-      <div class="bar-row"><div class="label">Car, fuel &amp; parking</div><div class="bar-track"><div class="bar-fill" style="width:49%;background:var(--seq-2)"></div></div><div class="value">S$763</div></div>
-      <div class="bar-row"><div class="label">Activities</div><div class="bar-track"><div class="bar-fill" style="width:46%;background:var(--seq-1)"></div></div><div class="value">S$710</div></div>
+      <div class="bar-row"><div class="label">Accommodation</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--seq-6)"></div></div><div class="value">S$2,320</div></div>
+      <div class="bar-row"><div class="label">Flights</div><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--seq-5)"></div></div><div class="value">S$1,400</div></div>
+      <div class="bar-row"><div class="label">Food &amp; dining</div><div class="bar-track"><div class="bar-fill" style="width:54%;background:var(--seq-4)"></div></div><div class="value">S$1,260</div></div>
+      <div class="bar-row"><div class="label">Insurance, SIM &amp; extras</div><div class="bar-track"><div class="bar-fill" style="width:33%;background:var(--seq-3)"></div></div><div class="value">S$770</div></div>
+      <div class="bar-row"><div class="label">Car, fuel &amp; parking</div><div class="bar-track"><div class="bar-fill" style="width:32%;background:var(--seq-2)"></div></div><div class="value">S$735</div></div>
+      <div class="bar-row"><div class="label">Activities</div><div class="bar-track"><div class="bar-fill" style="width:17%;background:var(--seq-1)"></div></div><div class="value">S$400</div></div>
     </div>
-    <p class="muted">Bars are scaled to the largest category (Accommodation, S$1,550).</p>
+    <p class="muted">Bars are scaled to the largest category (Accommodation, S$2,320).</p>
   </section>
 
   <section>
     <h2>Full itemised breakdown</h2>
+
+    <div class="cat-group">
+      <h3><span class="swatch" style="background:var(--seq-6)"></span>Accommodation <span class="subtotal">S$2,320</span></h3>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><td>North (Jeju City) resort &times; 4 nights &middot; both routes</td><td class="num">S$1,280</td></tr>
+          <tr><td>Second-base resort &times; 4 nights &middot; East (Seongsan) or West (Aewol)</td><td class="num">S$1,040</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted" style="margin-top:.5rem">All-resort, family rooms sleeping 4. Book both stays early &mdash; family rooms with pool access sell out first. See <a href="accommodation.html">Lodging</a> for named options and how to trade up or down.</p>
+    </div>
 
     <div class="cat-group">
       <h3><span class="swatch" style="background:var(--seq-5)"></span>Flights <span class="subtotal">S$1,400</span></h3>
@@ -166,58 +166,44 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
     </div>
 
     <div class="cat-group">
-      <h3><span class="swatch" style="background:var(--seq-6)"></span>Accommodation <span class="subtotal">S$1,550</span></h3>
+      <h3><span class="swatch" style="background:var(--seq-4)"></span>Food &amp; dining <span class="subtotal">S$1,260</span></h3>
       <div class="table-wrap"><table>
         <tbody>
-          <tr><td>Jeju City hotel &times; 2 nights</td><td class="num">S$230</td></tr>
-          <tr><td>Seongsan family pension &times; 2 nights</td><td class="num">S$200</td></tr>
-          <tr><td>Jungmun resort (splurge) &times; 2 nights</td><td class="num">S$900</td></tr>
-          <tr><td>Aewol family pension &times; 2 nights</td><td class="num">S$220</td></tr>
+          <tr><td>9 days &times; family of 4, blended breakfast/lunch/dinner (~S$140/day)</td><td class="num">S$1,260</td></tr>
         </tbody>
       </table></div>
+      <p class="muted" style="margin-top:.5rem">A touch higher than a pension trip &mdash; more resort and café meals, fewer self-catered ones. Resort nights often include breakfast, which softens this. Still plenty of room for convenience-store mornings, market street food and black pork BBQ dinners.</p>
     </div>
 
     <div class="cat-group">
-      <h3><span class="swatch" style="background:var(--seq-4)"></span>Food &amp; dining <span class="subtotal">S$1,170</span></h3>
-      <div class="table-wrap"><table>
-        <tbody>
-          <tr><td>9 days &times; family of 4, blended breakfast/lunch/dinner (~S$130/day)</td><td class="num">S$1,170</td></tr>
-        </tbody>
-      </table></div>
-      <p class="muted" style="margin-top:.5rem">Covers convenience-store breakfasts, market street food, and 2&ndash;3 sit-down black pork BBQ dinners. Resort nights may include breakfast, which softens this a little.</p>
-    </div>
-
-    <div class="cat-group">
-      <h3><span class="swatch" style="background:var(--seq-2)"></span>Car, fuel &amp; parking <span class="subtotal">S$763</span></h3>
+      <h3><span class="swatch" style="background:var(--seq-2)"></span>Car, fuel &amp; parking <span class="subtotal">S$735</span></h3>
       <div class="table-wrap"><table>
         <tbody>
           <tr><td>Compact SUV rental, 8 days</td><td class="num">S$448</td></tr>
           <tr><td>Full insurance / excess waiver, 8 days</td><td class="num">S$138</td></tr>
           <tr><td>2 &times; booster seats, 8 days</td><td class="num">S$69</td></tr>
-          <tr><td>Fuel (~350&ndash;400km total, no tolls on Jeju)</td><td class="num">S$78</td></tr>
-          <tr><td>Parking at attractions</td><td class="num">S$30</td></tr>
+          <tr><td>Fuel (~250km total, less driving on a two-base plan, no tolls)</td><td class="num">S$55</td></tr>
+          <tr><td>Parking at attractions</td><td class="num">S$25</td></tr>
         </tbody>
       </table></div>
     </div>
 
     <div class="cat-group">
-      <h3><span class="swatch" style="background:var(--seq-1)"></span>Activities &amp; attractions <span class="subtotal">S$710</span></h3>
+      <h3><span class="swatch" style="background:var(--seq-1)"></span>Activities &amp; attractions <span class="subtotal">S$400</span></h3>
       <div class="table-wrap"><table>
         <tbody>
           <tr><td>Manjanggul Cave</td><td class="num">S$10</td></tr>
-          <tr><td>Aqua Planet Jeju aquarium</td><td class="num">S$125</td></tr>
-          <tr><td>Seongsan Ilchulbong entry</td><td class="num">S$13</td></tr>
-          <tr><td>Udo Island ferry + e-bike/cart rental</td><td class="num">S$70</td></tr>
-          <tr><td>Teddy Bear / Trick Art Museum</td><td class="num">S$40</td></tr>
-          <tr><td>Camellia Hill</td><td class="num">S$30</td></tr>
-          <tr><td>Cheonjiyeon Waterfall</td><td class="num">S$10</td></tr>
-          <tr><td>Hallim Park</td><td class="num">S$42</td></tr>
-          <tr><td>Mandarin-picking experience</td><td class="num">S$40</td></tr>
-          <tr><td>Submarine tour (optional highlight)</td><td class="num">S$200</td></tr>
-          <tr><td>Horse-riding / extra experience</td><td class="num">S$100</td></tr>
-          <tr><td>Small entry fees &amp; buffer</td><td class="num">S$30</td></tr>
+          <tr><td>Sangumburi Crater</td><td class="num">S$14</td></tr>
+          <tr><td>Forest walk (Bijarim / Saryeoni)</td><td class="num">S$8</td></tr>
+          <tr><td>Jeju Stone Park / Halla Arboretum</td><td class="num">S$10</td></tr>
+          <tr><td>East route: Udo ferry + e-bike/cart</td><td class="num">S$70</td></tr>
+          <tr><td>East route: Seongsan Ilchulbong entry</td><td class="num">S$13</td></tr>
+          <tr><td>East route: Aqua Planet Jeju aquarium</td><td class="num">S$125</td></tr>
+          <tr><td>Mandarin-picking / farm experience</td><td class="num">S$40</td></tr>
+          <tr><td>Small entry fees &amp; buffer</td><td class="num">S$110</td></tr>
         </tbody>
       </table></div>
+      <p class="muted" style="margin-top:.5rem">Shown for the East route. The West route swaps Udo, Sunrise Peak and Aqua Planet (~S$208) for Hallim Park, Camellia Hill and free tea fields and oreums (~S$70), so it runs roughly S$140 lower &mdash; the buffer easily absorbs the difference either way. Most of the nature on both plans (forests, beaches, oreums) is free or a few dollars.</p>
     </div>
 
     <div class="cat-group">
@@ -234,20 +220,20 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
 
     <div class="table-wrap">
       <table>
-        <tfoot><tr><td>Grand total</td><td class="num">S$6,363</td></tr></tfoot>
+        <tfoot><tr><td>Grand total</td><td class="num">S$6,885</td></tr></tfoot>
       </table>
     </div>
   </section>
 
   <section>
-    <h2>What the S$2,637 buffer is for</h2>
-    <p>This plan is deliberately not stretched to the cap, because flights and resort rates are estimates until you actually book them &mdash; a fare spike or a peak-rate weekend could easily eat several hundred dollars. Keeping ~29% in reserve means one of those surprises doesn't blow the budget. If prices come in as estimated, here's where the leftover could go:</p>
+    <h2>What the S$2,115 buffer is for</h2>
+    <p>This plan is deliberately not stretched to the cap, because flights and resort rates are estimates until you actually book them &mdash; a fare spike or a peak-rate weekend could easily eat several hundred dollars. Keeping ~23% in reserve means one of those surprises doesn't blow the budget. If prices come in as estimated, here's where the leftover could go:</p>
     <ul class="upgrades">
-      <li>Upgrade the Jungmun splurge to a true 5-star (Shilla, Parnas) or extend it a night <span class="amt">+S$300&ndash;600</span></li>
+      <li>Trade up either resort to a true 5-star, or to a suite / connecting family rooms <span class="amt">+S$400&ndash;800</span></li>
       <li>Seat selection / extra baggage on the flights <span class="amt">+S$150&ndash;300</span></li>
-      <li>Add a private or small-group guided day (e.g. Hallasan lower-trail hike with a guide) <span class="amt">+S$300&ndash;500</span></li>
-      <li>Bigger shopping/duty-free allowance <span class="amt">flexible</span></li>
-      <li>Just keep it as contingency &mdash; recommended given how far out these estimates are <span class="amt">S$2,637</span></li>
+      <li>Add a private or small-group guided nature day (a gentle Hallasan lower-trail or forest walk with a guide) <span class="amt">+S$300&ndash;500</span></li>
+      <li>A spa / soak afternoon for the adults on a rest day <span class="amt">+S$150&ndash;300</span></li>
+      <li>Just keep it as contingency &mdash; recommended given how far out these estimates are <span class="amt">S$2,115</span></li>
     </ul>
   </section>
 

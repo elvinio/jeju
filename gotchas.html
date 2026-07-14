@@ -16,17 +16,6 @@
   --font-display:Georgia,'Iowan Old Style','Palatino Linotype','Noto Serif KR',serif;
   --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{
-    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
-    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
-    --accent:#E28C4E; --accent-deep:#F0A050;
-    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
-    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
-    --nav-bg:rgba(21,24,21,0.86);
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
-  }
-}
 :root[data-theme="dark"]{
   --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
   --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
@@ -63,7 +52,7 @@ p{ margin:0 0 1em; }
 .topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
 .brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
 .brand em{ font-style:normal; color:var(--accent-deep); }
-.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks{ display:flex; gap:1.2rem; flex-wrap:wrap; }
 .navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
 .navlinks a:hover{ color:var(--ink); }
 .navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
@@ -96,7 +85,8 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
   <div class="navlinks">
     <a href="index.html">Overview</a>
-    <a href="itinerary.html">Itinerary</a>
+    <a href="itinerary-east.html">North &amp; East</a>
+    <a href="itinerary-west.html">North &amp; West</a>
     <a href="accommodation.html">Lodging</a>
     <a href="budget.html">Budget</a>
     <a class="active" href="gotchas.html">Gotchas</a>
@@ -107,7 +97,7 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   <header class="page-head">
     <div class="eyebrow">Read before you book</div>
     <h1>Gotchas &amp; things to sort out</h1>
-    <p class="lede">Grouped by when they matter &mdash; documents to sort before you fly, driving quirks, weather and packing, money, school-term logistics, and a few practical odds and ends.</p>
+    <p class="lede">Grouped by when they matter &mdash; documents to sort before you fly, driving quirks, weather and packing, money, school-term logistics, and a few notes specific to the slower two-base plan.</p>
   </header>
 
   <section>
@@ -131,6 +121,20 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   </section>
 
   <section>
+    <h2>The two-base plan</h2>
+    <div class="callout tag-good">
+      <span class="tag">Good news</span>
+      <div><h3>You only unpack twice</h3>
+      <p>Both routes stay four nights in the north, then four on one coast &mdash; a single change of base for the whole trip. Book both stays as early as you can; all-resort family rooms with pool access are the first things to sell out in November, and you're committing to specific properties rather than swapping pensions on the fly.</p></div>
+    </div>
+    <div class="callout tag-warning">
+      <span class="tag">Important</span>
+      <div><h3>Your last night isn't in Jeju City &mdash; leave margin on departure day</h3>
+      <p>To keep it to one move, the final night is on your chosen coast, not back near the airport. On the East route that's a ~1-hour drive to CJU on the morning of departure; on the West route it's only ~40 min. Fine for a mid-morning or later flight &mdash; just don't book the earliest departure of the day, and refuel the evening before to keep the airport run short.</p></div>
+    </div>
+  </section>
+
+  <section>
     <h2>Driving in Jeju</h2>
     <div class="callout tag-warning">
       <span class="tag">Important</span>
@@ -148,14 +152,14 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
       <p>There are no expressways on the island, so no Hi-pass transponder or toll fees to worry about &mdash; just ordinary coastal and country roads. Speed cameras and school-zone limits (30km/h) are strictly enforced though, and fines apply even to rental cars.</p></div>
     </div>
     <div class="callout tag-info">
-      <span class="tag">Note</span>
+      <span class="tag">East route</span>
       <div><h3>Udo Island doesn't take your rental car</h3>
-      <p>Rental cars can't be ferried over for a day trip &mdash; only if you're staying on Udo overnight. Park at the Seongsan Port lot (cheap, ~S$4/day) and rent an e-bike or cart once you're on the island instead.</p></div>
+      <p>On the North &amp; East plan, rental cars can't be ferried over for a day trip &mdash; only if you're staying on Udo overnight. Park at the Seongsan Port lot (cheap, ~S$4/day) and rent an e-bike or cart once you're on the island instead.</p></div>
     </div>
     <div class="callout tag-info">
       <span class="tag">Note</span>
       <div><h3>Refuel before returning the car</h3>
-      <p>Standard "return full" policy &mdash; refuel near the airport before drop-off to avoid the rental company's inflated top-up rate. Stick to a petrol or hybrid compact SUV rather than an EV; Jeju pushes EV rentals hard, but charging-stop logistics add friction you don't need with two young kids in the car.</p></div>
+      <p>Standard "return full" policy &mdash; refuel near the airport (or on the way in) before drop-off to avoid the rental company's inflated top-up rate. Stick to a petrol or hybrid compact SUV rather than an EV; Jeju pushes EV rentals hard, but charging-stop logistics add friction you don't need with two young kids in the car.</p></div>
     </div>
   </section>
 
@@ -164,17 +168,17 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
     <div class="callout tag-good">
       <span class="tag">Good news</span>
       <div><h3>November is Jeju's driest, mildest month</h3>
-      <p>Expect 13&ndash;17&deg;C by day, ~12&deg;C overnight, and only ~74mm of rain spread over the month &mdash; genuinely pleasant self-drive weather. Pack layers and a windproof jacket; coastal wind can be sharp even on a mild day.</p></div>
+      <p>Expect 13&ndash;17&deg;C by day, ~12&deg;C overnight, and only ~74mm of rain spread over the month &mdash; genuinely pleasant self-drive weather, and ideal for the forests, craters and coastal walks this plan leans on. Pack layers and a windproof jacket; coastal wind can be sharp even on a mild day.</p></div>
     </div>
     <div class="callout tag-info">
       <span class="tag">Note</span>
       <div><h3>Short days</h3>
-      <p>Sunrise is around 07:20 and sunset around 17:25 in late November &mdash; the Seongsan sunrise hike means a genuinely early, cool start, and outdoor plans elsewhere should wrap by dusk.</p></div>
+      <p>Sunrise is around 07:20 and sunset around 17:25 in late November. That suits this slower plan &mdash; late starts, and outdoor plans (the Saebyeol or Yongnuni oreum at sunset, say) wrapping by dusk rather than being squeezed into a packed day.</p></div>
     </div>
     <div class="callout tag-info">
       <span class="tag">Note</span>
       <div><h3>Sea's too cold to swim, pools are heated</h3>
-      <p>Pack swimsuits anyway &mdash; the Jungmun resort's indoor/heated pool is very much in play, even though the ocean itself is off the table this time of year. Hallasan's summit trail can see early snow/ice in November and isn't included in this itinerary as a result &mdash; it's not a good match for a 7- and 9-year-old regardless of conditions.</p></div>
+      <p>Pack swimsuits anyway &mdash; every base on this plan is a resort with a heated indoor pool, which is very much in play even though the ocean itself is off the table this time of year (the turquoise beaches are for paddling and sandcastles, not swimming). Hallasan's summit trail can see early snow/ice in November and isn't included &mdash; it's not a good match for a 7- and 9-year-old regardless, though a gentle lower-forest trail is an easy add if you want one.</p></div>
     </div>
   </section>
 
@@ -183,7 +187,7 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
     <div class="callout tag-info">
       <span class="tag">Note</span>
       <div><h3>Cards over cash, but carry some won</h3>
-      <p>Korea is highly card-friendly &mdash; Visa/Mastercard work almost everywhere. Keep some cash for markets, small pensions, and parking. Tipping isn't expected anywhere, including restaurants and drivers.</p></div>
+      <p>Korea is highly card-friendly &mdash; Visa/Mastercard work almost everywhere. Keep some cash for markets, small farm stalls, and parking. Tipping isn't expected anywhere, including restaurants and drivers.</p></div>
     </div>
     <div class="callout tag-good">
       <span class="tag">Good news</span>
@@ -211,7 +215,7 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
     <div class="callout tag-info">
       <span class="tag">Note</span>
       <div><h3>Restaurant quirks</h3>
-      <p>Many black pork BBQ places have a minimum order of 2 portions per table, and small local restaurants often close one fixed day a week plus a mid-afternoon break &mdash; check hours before making a special trip.</p></div>
+      <p>Many black pork BBQ places have a minimum order of 2 portions per table, and small local restaurants often close one fixed day a week plus a mid-afternoon break &mdash; check hours before making a special trip. Booking a resort with breakfast included takes the pressure off the mornings.</p></div>
     </div>
     <div class="callout tag-info">
       <span class="tag">Note</span>
@@ -221,7 +225,7 @@ footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink
   </section>
 
   <footer class="site">
-    <p>Back to <a href="index.html">Overview</a> &middot; <a href="budget.html">Budget</a> &middot; <a href="itinerary.html">Itinerary</a></p>
+    <p>Back to <a href="index.html">Overview</a> &middot; <a href="itinerary-east.html">North &amp; East</a> &middot; <a href="itinerary-west.html">North &amp; West</a> &middot; <a href="budget.html">Budget</a></p>
   </footer>
 </main>
 </body>
