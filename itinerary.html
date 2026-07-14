@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeju Itinerary · Nov 2026</title>
+<style>
+:root{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A;
+  --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --warning:#fab219; --critical:#d03b3b;
+  --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+  --font-display:Georgia,'Iowan Old Style','Palatino Linotype','Noto Serif KR',serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+    --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+    --accent:#E28C4E; --accent-deep:#F0A050;
+    --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+    --good:#3fbf3f; --warning:#fab219; --critical:#e0605f;
+    --nav-bg:rgba(21,24,21,0.86);
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151815; --paper-raised:#1D201C; --ink:#EEEFEA; --ink-soft:#B7BAB2; --ink-muted:#8B8E86;
+  --border:rgba(238,239,234,0.14); --border-strong:rgba(238,239,234,0.22);
+  --accent:#E28C4E; --accent-deep:#F0A050; --east:#0D9488; --west:#C8607A; --city:#9A9D95;
+  --good:#3fbf3f; --critical:#e0605f; --nav-bg:rgba(21,24,21,0.86);
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --paper:#F1F3EF; --paper-raised:#FBFBF8; --ink:#1E211F; --ink-soft:#565A54; --ink-muted:#83867F;
+  --border:rgba(30,33,31,0.12); --border-strong:rgba(30,33,31,0.2);
+  --accent:#E1690F; --accent-deep:#A84A0A; --east:#00897A; --west:#B33A56; --city:#6C716F;
+  --good:#0ca30c; --critical:#d03b3b; --nav-bg:rgba(241,243,239,0.88);
+  --shadow:0 1px 2px rgba(30,33,31,.06), 0 4px 16px rgba(30,33,31,.06);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body);
+  font-size:16px; line-height:1.6;
+  background-image:radial-gradient(circle at 18% 8%, rgba(30,33,31,0.03) 0, transparent 45%),
+                    radial-gradient(circle at 82% 55%, rgba(30,33,31,0.025) 0, transparent 50%);
+}
+::selection{ background:var(--accent); color:#fff; }
+a{ color:var(--accent-deep); }
+a:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+h1,h2,h3{ font-family:var(--font-display); color:var(--ink); text-wrap:balance; margin:0; }
+h1{ font-size:2.15rem; font-weight:700; letter-spacing:-0.01em; }
+h2{ font-size:1.4rem; font-weight:700; margin-bottom:.4rem; }
+h3{ font-size:1.05rem; font-weight:700; }
+p{ margin:0 0 1em; }
+.muted{ color:var(--ink-soft); }
+.eyebrow{ font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); }
+.wrap{ max-width:900px; margin:0 auto; padding:0 1.5rem; }
+.topnav{ position:sticky; top:0; z-index:20; background:var(--nav-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.topnav .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.85rem 1.5rem; flex-wrap:wrap; }
+.brand{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--ink); text-decoration:none; white-space:nowrap; }
+.brand em{ font-style:normal; color:var(--accent-deep); }
+.navlinks{ display:flex; gap:1.35rem; flex-wrap:wrap; }
+.navlinks a{ color:var(--ink-soft); text-decoration:none; font-size:.9rem; font-weight:600; padding:.25rem 0; border-bottom:2px solid transparent; }
+.navlinks a:hover{ color:var(--ink); }
+.navlinks a.active{ color:var(--ink); border-bottom-color:var(--accent); }
+main{ padding-bottom:5rem; }
+header.page-head{ padding:2.75rem 0 1rem; }
+header.page-head p.lede{ font-size:1.08rem; color:var(--ink-soft); max-width:64ch; margin-top:.6rem; }
+section{ padding:1.25rem 0; }
+.chip{ display:inline-flex; align-items:center; gap:.4rem; font-size:.75rem; font-weight:700; padding:.28rem .6rem; border-radius:99px; background:var(--paper-raised); border:1px solid var(--border-strong); color:var(--ink); white-space:nowrap; }
+.chip .dot{ width:8px; height:8px; border-radius:50%; flex:none; }
+.chip-east .dot{ background:var(--east); } .chip-south .dot{ background:var(--accent); } .chip-west .dot{ background:var(--west); } .chip-city .dot{ background:var(--city); }
+.day{ display:grid; grid-template-columns:92px 1fr; gap:1.4rem; padding:1.6rem 0; border-top:1px solid var(--border); }
+.day:first-of-type{ border-top:none; padding-top:.5rem; }
+.day-date .num{ font-family:var(--font-display); font-size:2.1rem; font-weight:700; line-height:1; }
+.day-date .dow{ font-size:.75rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:.06em; margin-top:.25rem; }
+.day-top{ display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; margin-bottom:.35rem; }
+.day-title{ font-family:var(--font-display); font-size:1.2rem; font-weight:700; }
+.day-body dl{ display:grid; grid-template-columns:96px 1fr; gap:.4rem 1rem; margin:.7rem 0 0; }
+.day-body dt{ font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); padding-top:.2rem; }
+.day-body dd{ margin:0; }
+.day-foot{ margin-top:.8rem; font-size:.88rem; color:var(--ink-soft); border-top:1px dashed var(--border-strong); padding-top:.6rem; }
+.day-foot strong{ color:var(--ink); }
+.drive-note{ display:inline-flex; align-items:center; gap:.4rem; font-size:.82rem; color:var(--ink-muted); margin:.6rem 0 0; }
+footer.site{ border-top:1px solid var(--border); padding:2rem 0; color:var(--ink-muted); font-size:.85rem; }
+@media (max-width:640px){
+  h1{ font-size:1.7rem; }
+  .day{ grid-template-columns:1fr; gap:.3rem; }
+  .day-date{ display:flex; align-items:baseline; gap:.6rem; }
+  .day-body dl{ grid-template-columns:84px 1fr; }
+}
+@media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<nav class="topnav"><div class="wrap">
+  <a class="brand" href="index.html">JEJU <em>·</em> NOV 2026</a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a class="active" href="itinerary.html">Itinerary</a>
+    <a href="accommodation.html">Lodging</a>
+    <a href="budget.html">Budget</a>
+    <a href="gotchas.html">Gotchas</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <header class="page-head">
+    <div class="eyebrow">Day by day</div>
+    <h1>9 days, one clockwise loop</h1>
+    <p class="lede">Sunrise (~07:20) and sunset (~17:25) are both early in late November, so mornings start a little earlier than usual and outdoor plans wrap by dusk. Total driving over the trip is roughly 350&ndash;400km &mdash; no expressways on Jeju, so it's all coastal and country roads.</p>
+  </header>
+
+  <section>
+    <div class="day">
+      <div class="day-date"><div class="num">21</div><div class="dow">Sat</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-city"><span class="dot"></span>Jeju City</span></div>
+        <div class="day-title">Arrival</div>
+        <dl>
+          <dt>Fly</dt><dd>Singapore Changi &rarr; Jeju Int'l (CJU), direct, ~6h. Likely an afternoon/evening arrival.</dd>
+          <dt>On landing</dt><dd>Clear immigration under Jeju's direct-entry visa waiver (no visa/K-ETA needed for Singapore passports). Collect the rental car &mdash; bring IDP, passport and SG licence; confirm the 2 booster seats are fitted.</dd>
+          <dt>Evening</dt><dd>Check into a Jeju City hotel. Easy dinner nearby &mdash; Dongmun Market or a black pork restaurant. Early night to recover from the flight.</dd>
+        </dl>
+        <div class="day-foot"><strong>Base:</strong> Jeju City</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">22</div><div class="dow">Sun</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-east"><span class="dot"></span>East</span></div>
+        <div class="day-title">Into the East &mdash; caves &amp; coastline</div>
+        <dl>
+          <dt>Morning</dt><dd>Drive to Gimnyeong (~40 min). Manjanggul Cave &mdash; a lava tube, a constant ~11&ndash;12&deg;C inside, so bring a light jacket even though it's mild outside.</dd>
+          <dt>Afternoon</dt><dd>Seopjikoji coastal walk, then Aqua Planet Jeju aquarium next door &mdash; a reliable indoor option if the weather turns.</dd>
+          <dt>Evening</dt><dd>Check into a Seongsan-area family pension. Dinner in Seongsan village.</dd>
+        </dl>
+        <p class="drive-note">&#8594; ~50&ndash;60 min driving today</p>
+        <div class="day-foot"><strong>Base:</strong> Seongsan (East), night 1 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">23</div><div class="dow">Mon</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-east"><span class="dot"></span>East</span></div>
+        <div class="day-title">Sunrise Peak &amp; Udo Island</div>
+        <dl>
+          <dt>Early AM</dt><dd>Climb Seongsan Ilchulbong (Sunrise Peak) &mdash; 30&ndash;45 min moderate trail up a tuff-cone crater rim. Go early to beat the tour buses.</dd>
+          <dt>Day trip</dt><dd>Ferry from Seongsan Port to Udo Island (leave the rental car in the port car park &mdash; cars can't be taken across for a day visit). Rent an e-bike or family cart to circle the island: Seobin Baeksa beach, Sanho beach, the famous peanut ice cream.</dd>
+          <dt>Evening</dt><dd>Last ferry back is around 17:30. Dinner in Seongsan.</dd>
+        </dl>
+        <div class="day-foot"><strong>Base:</strong> Seongsan (East), night 2 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">24</div><div class="dow">Tue</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-south"><span class="dot"></span>South</span></div>
+        <div class="day-title">East to South, via the old villages</div>
+        <dl>
+          <dt>Morning</dt><dd>Drive toward Jungmun via the south coast road (~1&ndash;1.5h with a stop).</dd>
+          <dt>En route</dt><dd>Seongeup Folk Village &mdash; a preserved walled village with thatched houses and stone walls &mdash; or Pyoseon Whitesand Beach, depending on the weather.</dd>
+          <dt>Afternoon</dt><dd>Check into the Jungmun resort. Let the kids loose on the pool/kids' facilities after two travel-heavy days.</dd>
+        </dl>
+        <p class="drive-note">&#8594; ~60&ndash;90 min driving today</p>
+        <div class="day-foot"><strong>Base:</strong> Jungmun / Seogwipo (South) &mdash; <strong>splurge stay</strong>, night 1 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">25</div><div class="dow">Wed</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-south"><span class="dot"></span>South</span></div>
+        <div class="day-title">Seogwipo highlights</div>
+        <dl>
+          <dt>Morning</dt><dd>Cheonjiyeon Waterfall (easy paved path) and Jusangjeolli Cliff (hexagonal basalt columns &mdash; striking, and a 10-minute walk).</dd>
+          <dt>Afternoon</dt><dd>Teddy Bear Museum or a trick-art museum as a rainy-day-proof option; Oedolgae Rock coastal walk or Jungmun Saekdal Beach if it's clear.</dd>
+          <dt>Evening</dt><dd>Back to the resort for the pool and an easy dinner &mdash; this is the built-in rest day.</dd>
+        </dl>
+        <div class="day-foot"><strong>Base:</strong> Jungmun / Seogwipo (South), night 2 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">26</div><div class="dow">Thu</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-west"><span class="dot"></span>West</span></div>
+        <div class="day-title">South to West, via Andeok</div>
+        <dl>
+          <dt>Morning</dt><dd>O'sulloc Tea Museum and Innisfree Jeju House (both free entry, side by side, working tea fields) &mdash; then Camellia Hill next door, in full bloom this time of year (camellias flower Nov&ndash;Mar).</dd>
+          <dt>Afternoon</dt><dd>Continue west, optionally via the Sanbangsan / Yongmeori coast viewpoint, to Aewol. Check into a pension or small hotel.</dd>
+          <dt>Evening</dt><dd>Sunset stroll along Aewol's cafe street.</dd>
+        </dl>
+        <p class="drive-note">&#8594; ~70&ndash;90 min driving today</p>
+        <div class="day-foot"><strong>Base:</strong> Aewol / Hallim (West), night 1 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">27</div><div class="dow">Fri</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-west"><span class="dot"></span>West</span></div>
+        <div class="day-title">West coast day</div>
+        <dl>
+          <dt>Morning</dt><dd>Hallim Park &mdash; botanical garden, caves and a folk village in one, right next to Hyeopjae Beach.</dd>
+          <dt>Afternoon</dt><dd>Mandarin-picking at a local farm &mdash; peak season, and a reliable hit with kids. Handam coastal walk near Aewol afterwards: flat, stroller-friendly, tide pools.</dd>
+          <dt>Evening</dt><dd>Saebyeol Oreum &mdash; a short, easy climb and one of the island's best sunset spots.</dd>
+        </dl>
+        <div class="day-foot"><strong>Base:</strong> Aewol / Hallim (West), night 2 of 2</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">28</div><div class="dow">Sat</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-city"><span class="dot"></span>Jeju City</span></div>
+        <div class="day-title">Back to Jeju City</div>
+        <dl>
+          <dt>Morning</dt><dd>Relaxed morning at Hyeopjae/Geumneung beach or around Aewol &mdash; no need to rush.</dd>
+          <dt>Afternoon</dt><dd>Drive back to Jeju City (~30&ndash;40 min). Dongmun Traditional Market for street food and souvenirs, or the Jeju Folklore &amp; Natural History Museum.</dd>
+          <dt>Evening</dt><dd>Check into a Jeju City hotel for the last night &mdash; keeps tomorrow's airport run short.</dd>
+        </dl>
+        <p class="drive-note">&#8594; ~30&ndash;40 min driving today</p>
+        <div class="day-foot"><strong>Base:</strong> Jeju City</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><div class="num">29</div><div class="dow">Sun</div></div>
+      <div class="day-body">
+        <div class="day-top"><span class="chip chip-city"><span class="dot"></span>Jeju City</span></div>
+        <div class="day-title">Departure</div>
+        <dl>
+          <dt>Morning</dt><dd>Breakfast, pack, refuel the car before returning it (avoid the rental company's refuel surcharge).</dd>
+          <dt>Airport</dt><dd>Return the car at CJU, fly direct back to Singapore.</dd>
+        </dl>
+        <div class="day-foot"><strong>Base:</strong> &mdash; travel day</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <p>Swap order of stops within a region freely &mdash; the region groupings (not the exact activity order) are what keeps the driving sane. See <a href="gotchas.html">Gotchas</a> for the Udo Island car restriction and booster-seat notes.</p>
+  </footer>
+</main>
+</body>
+</html>
